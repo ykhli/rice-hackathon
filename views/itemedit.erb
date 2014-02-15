@@ -1,0 +1,19 @@
+<div class='itemedit'>
+  <div class='itemedit-header'>
+    <p style = "font-size:35px">Edit Item</p>
+
+    <hr>
+  </div>
+  <% if @items %>  
+    <form action="/item/<%= @items.id %>" method="post" id="edit">  
+      <input type="hidden" name="_method" value="put">  
+      <h3> Item name: </h3>
+      <input style="resize: none" name="nitem_name" placeholder="<%= @items.name %>"</input>
+      <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+    </form>  
+    <a type="button" class="btn btn-danger btn-lg" href="/item/<%= @items.id %>/delete">Delete</a>  
+
+<% else %>  
+  <p>No items found in this container!</p>
+<% end %>  
+</div>

@@ -1,0 +1,11 @@
+<div class='viewwer2'>
+
+  <% @containers.containers.each do |container| %>  
+    <article>
+      <h1><a href="/items/container_<%= container.id %>">Container: <%= container.name %> </a> </h1>
+      <p class="meta">Created: <%= container.created_at %></p>  <span><a type="button" class="btn btn-info btn-lg" href="/container/<%= container.id %>">[Edit Container]</a></span>
+      <a type="button" class="btn btn-danger btn-lg" href="/container/<%= @containers.id %>/delete">Delete</a>
+    </article>  
+  <% end %> 
+
+</div>

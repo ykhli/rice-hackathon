@@ -1,0 +1,11 @@
+<div class='viewwer'>
+
+  <% @items.items.each do |item| %>  
+    <article>
+        <h1>Item: <%= item.name %> </h1>
+      <p class="meta">Created: <%= item.created_at %></p>  <span><a type="button" class="btn btn-info btn-lg"href="/item/<%= item.id %>">[Edit Item]</a></span>
+      <a type="button" class="btn btn-danger btn-lg" href="/item/<%= @items.id %>/delete">Delete</a>
+    </article>  
+  <% end %> 
+
+</div>

@@ -1,0 +1,14 @@
+<% if @rooms %>  
+  <h1>Are you sure you want to delete the following Room: <em>"<%= @rooms.name %>"</em>?</h1>
+
+  <p> You will lose all of the items in room: <em>"<%=@rooms.name %>"</em> and where they are located in this room!</p>
+
+  <form action="/room/<%= @rooms.id %>" method="post">  
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" class="btn btn-danger btn-lg" value="Yes, Delete it All!">  
+    <a type="button" class="btn btn-info btn-lg" href="/room/<%= @rooms.id %>">Cancel!</a>  
+  </form>  
+
+<% else %>  
+  <p>Room is lost and cannnot be found.</p>  
+<% end %>  

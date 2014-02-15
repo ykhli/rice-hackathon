@@ -1,0 +1,19 @@
+<div class='containeredit'>
+  <div class='container-header'>
+    <p>Edit Container</p>
+
+    <hr>
+  </div>
+  <% if @containers %>  
+    <form action="/container/<%= @containers.id %>" method="post" id="edit">  
+      <input type="hidden" name="_method" value="put">  
+      <h3> Container name: </h3>
+      <input name="ncontainer_name" placeholder="<%= @containers.name %>"></input>
+      <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+    </form>  
+    <a type="button" class="btn btn-danger btn-lg" href="/container/<%= @containers.id %>/delete">Delete</a>
+
+<% else %>  
+  <p>No containers found in this room!</p>
+<% end %>  
+</div>

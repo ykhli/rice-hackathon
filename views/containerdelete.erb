@@ -1,0 +1,14 @@
+<% if @containers %>  
+  <h1>Are you sure you want to delete the following Container: <em>"<%= @containers.name %>"</em>?</h1>
+
+  <p> You will lose all of the items in container: <em>"<%=@containers.name %>"</em>!</p>
+
+  <form action="/container/<%= @containers.id %>" method="post">  
+    <input type="hidden" name="_method" value="delete">  
+    <input type="submit" class="btn btn-danger btn-lg value="Yes, Delete the container!">  
+    <a type="button" class="btn btn-info btn-lg href="/container/<%= @containers.id %>">Cancel!</a>  
+  </form>  
+  
+<% else %>  
+  <p>Container is lost and  cannot be found.</p>  
+<% end %>  
